@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-crema: #f8ede3;
+  --color-crema-oscuro: #ede1d3;
+  --color-salvia: #bdd2b6;
+  --color-salvia-oscuro: #a2b29f;
+  --color-verde: #798777;
+  --color-verde-oscuro: #647063;
+  --color-texto: #3a3f38;
+  --color-texto-suave: #645d56;
+  --color-peligro: #b3453d;
+  --color-peligro-fondo: #fbe4e1;
+  --color-exito: #4c7a5a;
+  --color-exito-fondo: #e1eee3;
+  --color-advertencia: #9c7a2e;
+  --color-advertencia-fondo: #f6ecd6;
+  --color-info: #4a5a8a;
+  --color-info-fondo: #e3e6f3;
+  --font-sans: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-crema);
+  color: var(--color-texto);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-salvia-oscuro);
+  border-radius: 999px;
+}
+
+
+@layer components {
+  .superficie {
+    background-color: var(--color-crema);
+    border-radius: 1rem;
+    box-shadow:
+      8px 8px 16px #e3d5c8,
+      -8px -8px 16px #ffffff;
+  }
+
+  .superficie-sm {
+    background-color: var(--color-crema);
+    border-radius: 0.75rem;
+    box-shadow:
+      4px 4px 10px #e3d5c8,
+      -4px -4px 10px #ffffff;
+  }
+
+  .campo-hundido {
+    background-color: var(--color-crema);
+    border-radius: 0.75rem;
+    box-shadow:
+      inset 3px 3px 7px #e3d5c8,
+      inset -3px -3px 7px #ffffff;
+  }
+
+  .boton-primario {
+    background-color: var(--color-verde);
+    color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 14px -4px rgba(100, 112, 99, 0.45);
+    transition: box-shadow 0.15s ease, transform 0.05s ease;
+  }
+
+  .boton-primario:hover {
+    background-color: var(--color-verde-oscuro);
+    box-shadow: 0 8px 18px -4px rgba(100, 112, 99, 0.55);
+  }
+
+  .boton-primario:active {
+    transform: translateY(1px);
+  }
+
+  .boton-secundario {
+    background-color: var(--color-crema);
+    color: var(--color-texto-suave);
+    border-radius: 0.75rem;
+    box-shadow:
+      4px 4px 8px #e3d5c8,
+      -4px -4px 8px #ffffff;
+  }
+
+  .nav-activo {
+    background-color: var(--color-salvia);
+    color: var(--color-texto);
+    box-shadow:
+      inset 2px 2px 5px #a5c0a0,
+      inset -2px -2px 5px #d5e5cc;
+  }
+
+  .sombra-lateral {
+    box-shadow: 6px 0 20px -8px rgba(58, 63, 56, 0.25);
+  }
+}
