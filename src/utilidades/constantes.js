@@ -13,8 +13,8 @@ export const POR_PAGINA_PREDETERMINADO = 10;
 // archivo con este mismo nombre dentro de public/imagenes, se mostrara
 // automaticamente.
 // -----------------------------------------------------------------------
-export const RUTA_LOGO_CLINICA = '/imagenes/logo-clinica.png';
-export const RUTA_ILUSTRACION_ACCESO = '/imagenes/ilustracion-acceso.png';
+export const RUTA_LOGO_CLINICA = 'imagenes/logo-clinica.png';
+export const RUTA_ILUSTRACION_ACCESO = 'imagenes/ilustracion-acceso.png';
 
 /** Credenciales de prueba validas segun https://dummyjson.com/users */
 export const USUARIO_DEMOSTRACION = {
