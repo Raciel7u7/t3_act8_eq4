@@ -1,11 +1,11 @@
 <div align="center">
+<img alt="Tecnológico Nacional de México" width="70" align="left" src="https://github.com/user-attachments/assets/429fd047-6f4d-48e1-a275-24a86adaf4af" />
 
-<img src="https://www.cdcuauhtemoc.tecnm.mx/wp-content/uploads/2021/08/LOGO-VERTICAL-TECNM.png" alt="Tecnológico Nacional de México" width="70" align="left">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Instituto_Tecnologico_de_Oaxaca_-_original.svg/1280px-Instituto_Tecnologico_de_Oaxaca_-_original.svg.png" alt="Instituto Tecnologico de Oaxaca" width="70" align="right"><br>
 
 # Instituto Tecnológico de Oaxaca
 
-###  Sistema Login con tablas CRUD - Consumo de APIs de Terceros
+###  Sistema Login con tablas CRUD - Consumo de APIs de Terceros con DummyJson
 
 Cruz Bautista Mauricio Raciel
 Chavez Hernandez Luis Eduardo
@@ -19,6 +19,10 @@ Programación Web, Verano 2026
 Mini sistema construido en React que simula un inicio de sesión real y una
 tabla de datos (inventario de insumos medicos) con filtros, paginacion y
 acciones CRUD.
+
+PARA INICIAR LA PRUEBA DEL PROYECTO COMO ADMINISTRADOR LAS CREDENCIALES SON
+usuario: emilys
+contrasena emilyspass
 
 ## Integrantes del equipo
 
