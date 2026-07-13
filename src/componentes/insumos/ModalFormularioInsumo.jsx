@@ -1,27 +1,30 @@
-import { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
-import { validarFormularioInsumo, tieneErrores } from '../../utilidades/validaciones';
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
+import {
+  validarFormularioInsumo,
+  tieneErrores,
+} from "../../utilidades/validaciones";
 
 const VALORES_VACIOS = {
-  nombre: '',
-  descripcion: '',
-  categoria: '',
-  marca: '',
-  precio: '',
-  existencias: '',
-  imagen: '',
+  nombre: "",
+  descripcion: "",
+  categoria: "",
+  marca: "",
+  precio: "",
+  existencias: "",
+  imagen: "",
 };
 
 function insumoAFormulario(insumo) {
   if (!insumo) return VALORES_VACIOS;
   return {
-    nombre: insumo.title ?? '',
-    descripcion: insumo.description ?? '',
-    categoria: insumo.category ?? '',
-    marca: insumo.brand ?? '',
-    precio: insumo.price ?? '',
-    existencias: insumo.stock ?? '',
-    imagen: insumo.thumbnail ?? '',
+    nombre: insumo.title ?? "",
+    descripcion: insumo.description ?? "",
+    categoria: insumo.category ?? "",
+    marca: insumo.brand ?? "",
+    precio: insumo.price ?? "",
+    existencias: insumo.stock ?? "",
+    imagen: insumo.thumbnail ?? "",
   };
 }
 
@@ -71,10 +74,10 @@ export function ModalFormularioInsumo({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-texto/40 px-4">
-      <div className="superficie max-h-[90vh] w-full max-w-lg overflow-y-auto">
+      <div className="superficieModalForm max-h-[90vh] w-full max-w-lg overflow-y-auto">
         <div className="flex items-center justify-between border-b border-crema-oscuro px-6 py-4">
           <h2 className="text-lg font-bold text-texto">
-            {estaEditando ? 'Editar insumo medico' : 'Agregar insumo medico'}
+            {estaEditando ? "Editar insumo medico" : "Agregar insumo medico"}
           </h2>
           <button
             type="button"
@@ -94,7 +97,9 @@ export function ModalFormularioInsumo({
             <input
               type="text"
               value={valores.nombre}
-              onChange={(evento) => actualizarCampo('nombre', evento.target.value)}
+              onChange={(evento) =>
+                actualizarCampo("nombre", evento.target.value)
+              }
               className="campo-hundido w-full px-3 py-2.5 text-sm text-texto outline-none"
               placeholder="Ej. Jeringa desechable 5ml"
             />
@@ -113,14 +118,17 @@ export function ModalFormularioInsumo({
                 list="lista-categorias-existentes"
                 value={valores.categoria}
                 onChange={(evento) =>
-                  actualizarCampo('categoria', evento.target.value)
+                  actualizarCampo("categoria", evento.target.value)
                 }
                 className="campo-hundido w-full px-3 py-2.5 text-sm text-texto outline-none"
                 placeholder="Ej. equipo-medico"
               />
               <datalist id="lista-categorias-existentes">
                 {categorias.map((categoriaDisponible) => (
-                  <option key={categoriaDisponible} value={categoriaDisponible} />
+                  <option
+                    key={categoriaDisponible}
+                    value={categoriaDisponible}
+                  />
                 ))}
               </datalist>
               {errores.categoria && (
@@ -135,7 +143,9 @@ export function ModalFormularioInsumo({
               <input
                 type="text"
                 value={valores.marca}
-                onChange={(evento) => actualizarCampo('marca', evento.target.value)}
+                onChange={(evento) =>
+                  actualizarCampo("marca", evento.target.value)
+                }
                 className="campo-hundido w-full px-3 py-2.5 text-sm text-texto outline-none"
                 placeholder="Opcional"
               />
@@ -152,7 +162,9 @@ export function ModalFormularioInsumo({
                 step="0.01"
                 min="0"
                 value={valores.precio}
-                onChange={(evento) => actualizarCampo('precio', evento.target.value)}
+                onChange={(evento) =>
+                  actualizarCampo("precio", evento.target.value)
+                }
                 className="campo-hundido w-full px-3 py-2.5 text-sm text-texto outline-none"
               />
               {errores.precio && (
@@ -169,12 +181,14 @@ export function ModalFormularioInsumo({
                 min="0"
                 value={valores.existencias}
                 onChange={(evento) =>
-                  actualizarCampo('existencias', evento.target.value)
+                  actualizarCampo("existencias", evento.target.value)
                 }
                 className="campo-hundido w-full px-3 py-2.5 text-sm text-texto outline-none"
               />
               {errores.existencias && (
-                <p className="mt-1 text-xs text-peligro">{errores.existencias}</p>
+                <p className="mt-1 text-xs text-peligro">
+                  {errores.existencias}
+                </p>
               )}
             </div>
           </div>
@@ -186,7 +200,7 @@ export function ModalFormularioInsumo({
             <textarea
               value={valores.descripcion}
               onChange={(evento) =>
-                actualizarCampo('descripcion', evento.target.value)
+                actualizarCampo("descripcion", evento.target.value)
               }
               rows={3}
               className="campo-hundido w-full px-3 py-2.5 text-sm text-texto outline-none"
@@ -201,7 +215,9 @@ export function ModalFormularioInsumo({
             <input
               type="text"
               value={valores.imagen}
-              onChange={(evento) => actualizarCampo('imagen', evento.target.value)}
+              onChange={(evento) =>
+                actualizarCampo("imagen", evento.target.value)
+              }
               className="campo-hundido w-full px-3 py-2.5 text-sm text-texto outline-none"
               placeholder="Opcional, ej. https://..."
             />
@@ -220,7 +236,7 @@ export function ModalFormularioInsumo({
               disabled={guardando}
               className="boton-primario px-4 py-2 text-sm font-semibold disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {guardando ? 'Guardando...' : 'Guardar'}
+              {guardando ? "Guardando..." : "Guardar"}
             </button>
           </div>
         </form>

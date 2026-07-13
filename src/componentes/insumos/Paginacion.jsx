@@ -1,5 +1,5 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { OPCIONES_POR_PAGINA } from '../../utilidades/constantes';
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { OPCIONES_POR_PAGINA } from "../../utilidades/constantes";
 
 export function Paginacion({
   pagina,
@@ -22,7 +22,9 @@ export function Paginacion({
           Por página
           <select
             value={porPagina}
-            onChange={(evento) => onCambiarPorPagina(Number(evento.target.value))}
+            onChange={(evento) =>
+              onCambiarPorPagina(Number(evento.target.value))
+            }
             className="campo-hundido px-2.5 py-1.5 text-sm text-texto outline-none"
           >
             {OPCIONES_POR_PAGINA.map((opcion) => (

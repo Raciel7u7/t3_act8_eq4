@@ -5,7 +5,7 @@ import { useAutenticacion } from '../contexto/ContextoAutenticacion';
 import { MensajeError } from '../componentes/comunes/MensajeError';
 import { validarFormularioAcceso, tieneErrores } from '../utilidades/validaciones';
 import { NOMBRE_CLINICA, USUARIO_DEMOSTRACION } from '../utilidades/constantes';
-
+import { RUTA_ILUSTRACION_ACCESO } from '../utilidades/constantes';
 export function PaginaInicioSesion() {
   const { estaAutenticado, cargando, iniciarSesion } = useAutenticacion();
   const navegar = useNavigate();
@@ -45,8 +45,8 @@ export function PaginaInicioSesion() {
   return (
     <div className="flex min-h-screen">
       <div className="hidden flex-1 flex-col items-center justify-center gap-6 bg-salvia p-10 lg:flex">
-        <div className="superficie flex h-32 w-32 items-center justify-center rounded-full !shadow-[-8px_-8px_16px_rgba(255,255,255,0.5),8px_8px_16px_rgba(0,0,0,0.12)]">
-          <Stethoscope className="h-14 w-14 text-white" strokeWidth={1.5} />
+        <div  className="superficie flex h-32 w-32 items-center justify-center rounded-full !shadow-[-8px_-8px_16px_rgba(255,255,200,0.5),8px_8px_16px_rgba(0,0,0,.4)]">
+          <img src={RUTA_ILUSTRACION_ACCESO} ></img>
         </div>
         <div className="text-center">
           <p className="text-2xl font-bold text-white">{NOMBRE_CLINICA}</p>

@@ -1,26 +1,26 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
   CalendarDays,
   Users,
   Boxes,
   Stethoscope,
-} from 'lucide-react';
-import { ImagenConRespaldo } from '../comunes/ImagenConRespaldo';
-import { NOMBRE_CLINICA, RUTA_LOGO_CLINICA } from '../../utilidades/constantes';
+} from "lucide-react";
+import { ImagenConRespaldo } from "../comunes/ImagenConRespaldo";
+import { NOMBRE_CLINICA, RUTA_LOGO_CLINICA } from "../../utilidades/constantes";
 
 const OPCIONES_NAVEGACION = [
-  { ruta: '/inicio', etiqueta: 'Inicio', Icono: LayoutDashboard },
-  { ruta: '/citas', etiqueta: 'Citas médicas', Icono: CalendarDays },
-  { ruta: '/pacientes', etiqueta: 'Pacientes', Icono: Users },
-  { ruta: '/insumos', etiqueta: 'Insumos médicos', Icono: Boxes },
+  { ruta: "/inicio", etiqueta: "Inicio", Icono: LayoutDashboard },
+  { ruta: "/citas", etiqueta: "Citas médicas", Icono: CalendarDays },
+  { ruta: "/pacientes", etiqueta: "Pacientes", Icono: Users },
+  { ruta: "/insumos", etiqueta: "Insumos médicos", Icono: Boxes },
 ];
 
 export function BarraLateral({ abierto }) {
   return (
     <aside
       className={`sombra-lateral h-full shrink-0 overflow-hidden bg-crema transition-[width] duration-300 ease-in-out ${
-        abierto ? 'w-64' : 'w-0'
+        abierto ? "w-64" : "w-0"
       }`}
     >
       <div className="flex h-full w-64 flex-col">
@@ -48,8 +48,8 @@ export function BarraLateral({ abierto }) {
               className={({ isActive }) =>
                 `flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors ${
                   isActive
-                    ? 'nav-activo font-semibold'
-                    : 'text-texto-suave hover:bg-crema-oscuro'
+                    ? "nav-activo font-semibold"
+                    : "text-texto-suave hover:bg-crema-oscuro"
                 }`
               }
             >
