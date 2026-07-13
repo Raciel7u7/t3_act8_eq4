@@ -1,5 +1,5 @@
-import { Navigate } from 'react-router-dom';
-import { useAutenticacion } from '../../contexto/ContextoAutenticacion';
+import { Navigate } from "react-router-dom";
+import { useAutenticacion } from "../../contexto/ContextoAutenticacion";
 
 export function RutaProtegida({ children }) {
   const { estaAutenticado } = useAutenticacion();

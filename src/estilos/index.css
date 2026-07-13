@@ -56,7 +56,10 @@ body {
       8px 8px 16px #e3d5c8,
       -8px -8px 16px #ffffff;
   }
-
+.superficieModalForm{
+ background-color: var(--color-crema);
+    border-radius: 1rem;
+}
   .superficie-sm {
     background-color: var(--color-crema);
     border-radius: 0.75rem;
