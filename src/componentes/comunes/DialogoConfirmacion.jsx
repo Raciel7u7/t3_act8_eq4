@@ -16,7 +16,7 @@ export function DialogoConfirmacion({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-texto/40 px-4">
-      <div className="superficie w-full max-w-sm p-6">
+      <div className="superficieModalForm w-full max-w-sm p-6">
         <div className="flex items-start justify-between">
           <div
             className={`flex h-10 w-10 items-center justify-center rounded-full ${
