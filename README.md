@@ -23,6 +23,7 @@ acciones CRUD.
 PARA INICIAR LA PRUEBA DEL PROYECTO COMO ADMINISTRADOR LAS CREDENCIALES SON
 usuario: emilys
 contrasena emilyspass
+O en el boton oculto para test probar credeciales pone aleatoriamente una credencial valida que se confirma con el json para testeo de variables dinamicas en la muestra de informacion en pantalla.
 
 ## Integrantes del equipo
 
