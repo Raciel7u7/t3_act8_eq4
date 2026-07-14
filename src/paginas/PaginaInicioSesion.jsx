@@ -4,7 +4,10 @@ import { Stethoscope, Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
 import { useAutenticacion } from '../contexto/ContextoAutenticacion';
 import { MensajeError } from '../componentes/comunes/MensajeError';
 import { validarFormularioAcceso, tieneErrores } from '../utilidades/validaciones';
-import { NOMBRE_CLINICA, USUARIO_DEMOSTRACION } from '../utilidades/constantes';
+import {
+  NOMBRE_CLINICA,
+  USUARIOS_DEMOSTRACION,
+} from '../utilidades/constantes';
 import { RUTA_ILUSTRACION_ACCESO } from '../utilidades/constantes';
 export function PaginaInicioSesion() {
   const { estaAutenticado, cargando, iniciarSesion } = useAutenticacion();
@@ -13,6 +16,8 @@ export function PaginaInicioSesion() {
   const [usuario, setUsuario] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [mostrarContrasena, setMostrarContrasena] = useState(false);
+  const [indiceDemo, setIndiceDemo] = useState(0);
+  const [mostrarCredencialesDemo, setMostrarCredencialesDemo] = useState(false);
   const [erroresCampos, setErroresCampos] = useState({});
   const [errorGeneral, setErrorGeneral] = useState('');
 
@@ -37,9 +42,15 @@ export function PaginaInicioSesion() {
   }
 
   function usarCredencialesDemostracion() {
-    setUsuario(USUARIO_DEMOSTRACION.usuario);
-    setContrasena(USUARIO_DEMOSTRACION.contrasena);
+    const credencial = USUARIOS_DEMOSTRACION[indiceDemo];
+
+    setUsuario(credencial.usuario);
+    setContrasena(credencial.contrasena);
     setErroresCampos({});
+    setMostrarCredencialesDemo(true);
+    setIndiceDemo((valorAnterior) =>
+      (valorAnterior + 1) % USUARIOS_DEMOSTRACION.length,
+    );
   }
 
   return (
@@ -138,7 +149,20 @@ export function PaginaInicioSesion() {
             onClick={usarCredencialesDemostracion}
             className="mt-4 w-full text-center text-xs text-texto-suave hover:text-verde"
           >
+            Usar credenciales de demostración
           </button>
+          {mostrarCredencialesDemo && (
+            <div className="mt-3 rounded-xl bg-white/80 p-3 text-xs text-texto-suave shadow-sm">
+              <p className="font-semibold text-texto">Usuarios demo válidos:</p>
+              <p className="mt-1 whitespace-pre-wrap">
+                {USUARIOS_DEMOSTRACION.map((credencial, index) =>
+                  `${credencial.usuario}/${credencial.contrasena}${
+                    index < USUARIOS_DEMOSTRACION.length - 1 ? ', ' : ''
+                  }`,
+                )}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
