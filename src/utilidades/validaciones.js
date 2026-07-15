@@ -1,7 +1,3 @@
-/**
- * Valida el formulario de acceso antes de mandarlo a la API.
- * Devuelve un objeto con un mensaje de error por campo (vacio si es valido).
- */
 export function validarFormularioAcceso({ usuario, contrasena }) {
   const errores = {};
 
@@ -18,9 +14,6 @@ export function validarFormularioAcceso({ usuario, contrasena }) {
   return errores;
 }
 
-/**
- * Valida el formulario de alta/edicion de un insumo medico.
- */
 export function validarFormularioInsumo({ nombre, categoria, precio, existencias }) {
   const errores = {};
 
